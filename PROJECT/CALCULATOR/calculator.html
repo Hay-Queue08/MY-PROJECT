@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<Html>
+    <Head>
+        <tittle>Calculator</tittle>
+    </Head>
+    <Body>
+
+        <form action="" method="Get">
+            <input type="text" name="Number1" placeholder="enter 1st number">
+            <input type="text" name="Number2" placeholder="enter 2nd number">
+            <select>
+                <option>--select operation--</option>
+                <option>Add</option>
+                <option>Subtract</option>
+                <option>Divide</option>
+                <option>Multiply</option>
+                <option>Square</option>
+            </select>
+            <br>
+            <button type="submit" name="submit" value="submit">Submit</button>
+            <br>
+            <br>
+        </form>
+        <p>The answer is :</p>
+        <?php
+            if(isset($_GET["submit"])){
+                $result1=$_GET['Number1'];
+                $result2=$_GET['Number2'];
+                $operator=$_GET['operator'];
+            }
+            switch ($operation){
+                case "--Select operation--":
+                    echo "ERROR, Select an arithmetic symbol";
+                    break;
+                case "Add":
+                    echo $number1 + $number2;
+                    break;
+                case "Subtract":
+                    echo $number1 - $number2;
+                    break;
+                case "Divide":
+                    echo $number1 / $number2;
+                    break;
+                case "Multiply":
+                    echo $number1 * $number2;
+                    break;
+                case "Square":
+                    echo $number1 * $number1;
+                    break;
+            }
+        ?>
+    </Body>
+</Html>

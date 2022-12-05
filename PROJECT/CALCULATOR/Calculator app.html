@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Calculator App</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="duplicate.php">Home</a></li>
+                    <li><a href="">Services</a></li>
+                    <li><a href="">Contact Us</a></li>
+                    <li><a href="">About Us</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <?php
+            include('header.php');
+        ?>
+    
+        <form action="" method="get">
+            <input type="text" name="num1" placeholder="Enter Number 1..">
+            <input type="text" name="num2" placeholder="Enter Number 2..">
+            <select name="operator">
+                <option>--Select Sign--</option>
+                <option>Add</option>
+                <option>Subtract</option>
+                <option>Divide</option>
+                <option>Multiply</option>
+            </select>
+            <span> 
+            <span>
+            <span>    
+            <button type="submit" name="submit" value="submit">Calculate</button>
+        </form>
+
+        <h4>Output: </h4>
+        <?php 
+            if (isset($_GET['submit'])) {
+                $number1 = $_GET['num1'];
+                $number2 = $_GET['num2'];
+                $sign = $_GET['operator'];
+
+                switch ($sign){
+                    case "--Select Sign--":
+                        echo "ERROR, Select an arithmetic symbol";
+                        break;
+                    case "Add":
+                        echo $number1 + $number2;
+                        break;
+                    case "Subtract":
+                        echo $number1 - $number2;
+                        break;
+                    case "Divide":
+                        echo $number1 / $number2;
+                        break;
+                    case "Multiply":
+                        echo $number1 * $number2;
+                        break;                
+                }
+    
+            }
+        ?>
+        <script src="" async defer></script>
+    </body>
+</html>
